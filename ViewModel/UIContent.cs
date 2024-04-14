@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using MvvmTrail.View;
 using PropertyChanged;
-using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace MvvmTrail.ViewModel
@@ -8,19 +9,11 @@ namespace MvvmTrail.ViewModel
     [AddINotifyPropertyChangedInterface]
     public class UIContent
     {
-        public string ButtonContent  = "Hello World!";
-        public ICommand ButtonCommand { get; set; }
-        
-        public UIContent() 
-        { 
-            ButtonCommand = new RelayCommand(OpenWindowAndSetString); 
-        }
 
-        public void OpenWindowAndSetString()
+        public UIContent()
         {
-            MessageBox.Show(ButtonContent);
-        }
 
-        
+        }
     }
+
 }

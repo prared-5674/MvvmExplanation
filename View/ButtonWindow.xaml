@@ -10,14 +10,19 @@
     <UserControl.DataContext>
         <viewModel:UIContent/>
     </UserControl.DataContext>
-    <Grid>
-        <Button Command="{Binding ButtonCommand}" 
-                Content="Click me"
-                Height="23"  
-                HorizontalAlignment="Left"  
-                Margin="77,45,0,0"  
-                Name="btnClick"  
-                VerticalAlignment="Top"  
-                Width="203" ></Button>
+    <Grid Background="LightGray">
+        <DockPanel VerticalAlignment="Bottom">
+            <Button Command="{Binding AddIncomeCommand}" 
+                    Content="Add Income"
+                    Height="23"  
+                    Width="345"
+                    Margin="10" />
+
+            <Button Command="{Binding AddExpenseCommand}" 
+                    Content="Add Expense"
+                    Height="23"  
+                    Width="345"
+                    Margin="10" />
+        </DockPanel>
     </Grid>
 </UserControl>

@@ -5,9 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MvvmTrail"
         xmlns:view="clr-namespace:MvvmTrail.View"
+        xmlns:viewModel="clr-namespace:MvvmTrail.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="450">
+        Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <view:ButtonWindow HorizontalAlignment="Center" VerticalAlignment="Center"></view:ButtonWindow>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <view:IncomeView Grid.Row="0" Grid.Column="0" Margin="5,185,5,0" DataContext="{Binding IncomeViewViewModel}"/>
+        <view:AddExpenseView Grid.Row="0" Grid.Column="1" Margin="5,185,5,0" DataContext="{Binding AddExpenseViewModel}"/>
+        <view:ButtonWindow Grid.Row="1" Grid.ColumnSpan="2" Margin="5"/>
+
     </Grid>
 </Window>
